@@ -1,0 +1,429 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Çetin Klima - Osmaniye’de klima satış, montaj ve teknik servis hizmetleri.">
+<title>Çetin Klima</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    /* Genel Stil */
+    body { 
+        font-family: 'Roboto', sans-serif; 
+        margin:0; 
+        padding:0; 
+        background:#e0f0f8; 
+        color:#333; 
+        transition: background 0.5s;
+    }
+    header { 
+        background:#222; 
+        color:white; 
+        padding:15px 20px; 
+        display:flex; 
+        align-items:center; 
+        justify-content:space-between; 
+        position:sticky; 
+        top:0; 
+        z-index:1000; 
+        box-shadow:0 2px 5px rgba(0,0,0,0.2);
+    }
+    header img { height:50px; margin-right:10px; }
+    nav a { 
+        color:white; 
+        margin:0 10px; 
+        text-decoration:none; 
+        font-weight:bold; 
+        cursor:pointer; 
+        transition:0.3s; 
+        padding:6px 12px; 
+        border-radius:5px;
+    }
+    nav a:hover { background:#00bfff; color:#fff; }
+
+    section { 
+        padding:60px 20px; 
+        max-width:1100px; 
+        margin:auto; 
+        opacity:0; 
+        transform:translateY(20px); 
+        transition:0.5s ease-in-out; 
+        display:none;
+    }
+    section.active { 
+        display:block; 
+        opacity:1; 
+        transform:translateY(0); 
+    }
+
+    h2 { color:#0077cc; margin-bottom:20px; text-align:center; }
+
+    footer { 
+        background:#333; 
+        color:white; 
+        text-align:center; 
+        padding:30px 20px; 
+        margin-top:40px; 
+        position:relative; 
+    }
+
+    /* Butonlar */
+    .button { 
+        background:#0077cc; 
+        color:white; 
+        padding:12px 25px; 
+        text-decoration:none; 
+        border-radius:30px; 
+        transition:0.3s; 
+        display:inline-block; 
+        font-weight:bold; 
+        box-shadow:0 4px 6px rgba(0,0,0,0.2);
+        cursor:pointer;
+    }
+    .button:hover { 
+        background:#005fa3; 
+        transform:translateY(-3px); 
+        box-shadow:0 6px 10px rgba(0,0,0,0.25); 
+    }
+
+    /* Kartlar */
+    .card { 
+        background:white; 
+        padding:20px; 
+        border-radius:10px; 
+        box-shadow:0 4px 6px rgba(0,0,0,0.1); 
+        transition:0.3s; 
+        text-align:center; 
+        flex:1 1 200px; 
+        font-weight:bold;
+    }
+    .card:hover { 
+        transform:translateY(-5px); 
+        box-shadow:0 8px 12px rgba(0,0,0,0.15); 
+        background:#f0f8ff; 
+    }
+    .cards { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; }
+
+    /* Hero Bölümü */
+    .hero {
+        background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('klima-bg.jpg') center/cover no-repeat;
+        color:white;
+        text-align:center;
+        padding:100px 20px;
+        border-radius:10px;
+    }
+    .hero h1 { font-size:36px; margin-bottom:15px; }
+    .hero p { font-size:18px; margin-bottom:25px; }
+
+    /* Blog Kartları */
+    .blog-card {
+        background:white;
+        border-radius:10px;
+        box-shadow:0 4px 6px rgba(0,0,0,0.1);
+        padding:20px;
+        margin:10px;
+        flex:1 1 300px;
+        transition:0.3s;
+    }
+    .blog-card:hover { 
+        transform:translateY(-5px); 
+        box-shadow:0 8px 12px rgba(0,0,0,0.15); 
+        background:#f0f8ff;
+    }
+
+    /* Blog yazı içeriği */
+    .blog-post {
+        background:white;
+        border-radius:10px;
+        box-shadow:0 4px 10px rgba(0,0,0,0.08);
+        padding:25px;
+        max-width:900px;
+        margin:auto;
+    }
+    .blog-post h3 { color:#0b6fbf; margin-top:20px; }
+    .blog-post ul { padding-left:18px; }
+    .muted { color:#666; font-size:14px; }
+    .note { background:#f0f8ff; border-left:4px solid #0077cc; padding:10px 12px; border-radius:8px; }
+
+    /* SSS Akordeon */
+    .faq-item {
+        background:white;
+        border-radius:10px;
+        box-shadow:0 2px 4px rgba(0,0,0,0.1);
+        margin:10px 0;
+        overflow:hidden;
+    }
+    .faq-question {
+        padding:15px;
+        cursor:pointer;
+        font-weight:bold;
+        background:#f0f4f8;
+    }
+    .faq-answer {
+        padding:15px;
+        display:none;
+        border-top:1px solid #ddd;
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+        position:fixed;
+        bottom:20px;
+        right:20px;
+        background:#25D366;
+        color:white;
+        padding:15px;
+        border-radius:50%;
+        box-shadow:0 4px 6px rgba(0,0,0,0.3);
+        font-size:24px;
+        z-index:2000;
+        text-decoration:none;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    /* Sosyal ikonlar footer */
+    .social-icons {
+        margin-top:15px;
+    }
+    .social-icons a {
+        color:#fff;
+        font-size:24px;
+        margin:0 10px;
+        transition:color 0.3s;
+        text-decoration:none;
+    }
+    .social-icons a:hover { color:#25D366; }
+
+    @media (max-width:600px) { 
+        nav { display:block; text-align:center; } 
+        nav a { display:inline-block; margin:5px; } 
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div style="display:flex; align-items:center;">
+        <img src="logo.png" alt="Çetin Klima Logo">
+        <span style="font-size:20px; font-weight:bold;">ÇETİN KLİMA KADİRLİ</span>
+    </div>
+    <nav>
+        <a data-section="anasayfa">Ana Sayfa</a>
+        <a data-section="hizmetlerimiz">Hizmetlerimiz</a>
+        <a data-section="markalarimiz">Markalarımız</a>
+        <a data-section="konumumuz">Konumumuz</a>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section id="anasayfa" class="active">
+    <div class="hero">
+        <h1>Çetin Klima – Kadirli’nin Güvencesi</h1>
+        <p>Klima Satışı • Montaj • Bakım • Servis</p>
+        <a data-section="hizmetlerimiz" class="button">Hizmetlerimizi Gör</a>
+        <a href="https://wa.me/905321005054" target="_blank" class="button" style="background:#25D366;">Hemen İletişime Geç</a>
+    </div>
+
+    <!-- Blog Önizleme -->
+    <h2>Blog / Tavsiyeler</h2>
+    <div class="cards">
+        <div class="blog-card">
+            <h3>Klima Seçerken Nelere Dikkat Etmelisiniz?</h3>
+            <p>Enerji sınıfı, BTU değeri, sessizlik ve garanti süresi seçimde en önemli kriterlerdir...</p>
+            <a href="#" class="button">Devamını Oku</a>
+        </div>
+        <div class="blog-card">
+            <h3>Enerji Tasarrufu İpuçları</h3>
+            <p>Klima kullanımında faturaları azaltmak için doğru ayar ve bakım çok önemlidir...</p>
+            <a href="#" class="button">Devamını Oku</a>
+        </div>
+        <div class="blog-card">
+            <h3>Klima Bakımı Neden Önemlidir?</h3>
+            <p>Düzenli bakım klimanın ömrünü uzatır, performansını artırır ve enerji tasarrufu sağlar...</p>
+            <a href="#" class="button">Devamını Oku</a>
+        </div>
+        <div class="blog-card">
+            <h3>Yazın Klima Kullanımı ve İpuçları</h3>
+            <p>Yaz aylarında doğru kullanım ve bakım, konforlu bir ortam sağlar ve faturaları düşürür...</p>
+            <a href="#" class="button">Devamını Oku</a>
+        </div>
+
+        <!-- YENİ: Klima Filtreleri blog kartı -->
+        <div class="blog-card">
+            <h3>Klima Filtreleri Nasıl Yıkanır?</h3>
+            <p>Adım adım filtre temizliği, gereken malzemeler ve püf noktaları…</p>
+            <a class="button" data-section="blog-filtre-temizligi">Devamını Oku</a>
+        </div>
+    </div>
+
+    <!-- SSS -->
+    <h2>Sıkça Sorulan Sorular</h2>
+    <div class="faq-item">
+        <div class="faq-question">Klima alırken nelere dikkat etmeliyim?</div>
+        <div class="faq-answer">BTU kapasitesi, enerji verimliliği ve garanti süresi en önemli kriterlerdir.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">Yıllık bakım gerekli mi?</div>
+        <div class="faq-answer">Evet, yıllık bakım klimanın ömrünü uzatır ve enerji tüketimini azaltır.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">Garanti süresinde servis ücrete tabi midir?</div>
+        <div class="faq-answer">Hayır, garanti kapsamındaki arızalar ücretsiz onarılır.</div>
+    </div>
+</section>
+
+<section id="hizmetlerimiz">
+    <h2>Hizmetlerimiz</h2>
+    <div class="cards">
+        <div class="card">Klima Satışı</div>
+        <div class="card">Montaj ve Kurulum</div>
+        <div class="card">Periyodik Bakım</div>
+        <div class="card">Arıza Onarımı</div>
+    </div>
+</section>
+
+<section id="markalarimiz">
+    <h2>Markalarımız</h2>
+    <div class="cards">
+        <a href="https://www.fgeurope.com.tr/" target="_blank" class="card">Midea</a>
+        <a href="https://www.rotaclimate.com/tr/" target="_blank" class="card">Rota</a>
+        <a href="https://www.yorktr.com/" target="_blank" class="card">York</a>
+        <a href="https://untes-hisense.com/" target="_blank" class="card">Hisense</a>
+        <a href="https://www.hitachiaircon.com/tr/" target="_blank" class="card">Hitachi</a>
+        <a href="https://fujitsuklima.com.tr/" target="_blank" class="card">Fujitsu</a>
+        <a href="https://www.generalclimate.com.tr/" target="_blank" class="card">General</a>
+    </div>
+</section>
+
+<section id="konumumuz" style="background:#f0f8ff;">
+    <h2>Konumumuz</h2>
+    <div style="margin-top:30px;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.961122971888!2d36.09215927557448!3d37.36709677209098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152ec5cc919f000b%3A0xac3619632fb51c37!2s%C3%87ET%C4%B0N%20KL%C4%B0MA!5e0!3m2!1str!2str!4v1755811842695!5m2!1str!2str" 
+            width="100%" 
+            height="450" 
+            style="border:0; border-radius:10px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+<!-- YENİ: "Klima Filtreleri Nasıl Yıkanır?" tam yazı -->
+<section id="blog-filtre-temizligi">
+    <div class="blog-post">
+        <h2>Klima Filtreleri Nasıl Yıkanır?</h2>
+        <p class="muted">Okuma süresi: 4–6 dakika</p>
+        <p>Klima filtreleri; toz, polen ve partikülleri tutarak hem hava kalitesini yükseltir hem de cihazın verimli çalışmasına yardımcı olur. <strong>Düzenli temizlik</strong>, kötü koku ve performans düşüşünü önler.</p>
+
+        <h3>Gereken Malzemeler</h3>
+        <ul>
+            <li>Ilık su</li>
+            <li>Nazik (pH nötr) sıvı sabun veya bulaşık deterjanı</li>
+            <li>Yumuşak fırça veya mikrofiber bez</li>
+            <li>Temiz ve gölgeli bir kurutma alanı</li>
+        </ul>
+
+        <h3>Adım Adım Temizlik</h3>
+        <ol>
+            <li><strong>Cihazı kapatın ve fişi çekin.</strong> Güvenlik her şeyden önce gelir.</li>
+            <li><strong>Ön kapağı açın.</strong> Split klimalarda üst bölümden nazikçe kaldırın.</li>
+            <li><strong>Filtreleri çıkarın.</strong> Genellikle tırnaklı yapıda, yukarı kaldırıp kendinize çekin.</li>
+            <li><strong>Kuru tozu alın.</strong> Elektrik süpürgesiyle düşük ayarda tozu çekin.</li>
+            <li><strong>Ilık suyla yıkayın.</strong> Akış yönü, tozun geldiği yönün tersine olsun.</li>
+            <li><strong>Gerekirse sabun ekleyin.</strong> Yumuşak fırça ile nazikçe ovun; tel fırça kullanmayın.</li>
+            <li><strong>İyice durulayın.</strong> Sabun kalıntısı kalmasın.</li>
+            <li><strong>Gölgede kurutun.</strong> Güneş altında veya fön ile kurutmayın. Tamamen kuruduğundan emin olun.</li>
+            <li><strong>Yerine takın ve kapağı kapatın.</strong> Cihazı çalıştırın.</li>
+        </ol>
+
+        <div class="note">
+            <strong>İpucu:</strong> Ev ortamında filtreleri yazın yoğun kullanımda <strong>ayda bir</strong>, kışın <strong>2–3 ayda bir</strong> temizlemek idealdir. Yağlı/yoğun tozlu alanlarda periyotları kısaltın.
+        </div>
+
+        <h3>Hangi Filtreler Yıkanmaz?</h3>
+        <p>Aktif karbon, HEPA veya fotokatalitik filtreler genelde <strong>yıkanmaz</strong>; üretici talimatına göre <strong>değiştirilir</strong>. Plastik/nylon ön filtreler yıkanabilir.</p>
+
+        <h3>Ne Zaman Servis Çağırmalı?</h3>
+        <ul>
+            <li>Temizliğe rağmen kötü koku/performans düşüklüğü sürüyorsa,</li>
+            <li>İç ünitede yoğun kirlilik, küf veya su damlatma varsa,</li>
+            <li>Filtre çerçevesi kırık/yorulmuşsa,</li>
+        </ul>
+        <p>Profesyonel <strong>kimyasal iç ünite temizliği</strong> ve detaylı bakım için teknik servise başvurun.</p>
+
+        <div style="text-align:center; margin-top:22px;">
+            <a class="button" data-section="anasayfa">← Ana Sayfaya Dön</a>
+            <a class="button" href="https://wa.me/905321005054" target="_blank" style="background:#25D366; margin-left:8px;"><i class="fab fa-whatsapp"></i> Servis Talep Et</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 Çetin Klima. Tüm hakları saklıdır.
+    <div class="social-icons">
+        <a href="https://wa.me/905321005054" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/cetinklimaa/?__pwa=1" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/gokhan.cetin5054" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:info@cetinklima.com"><i class="fas fa-envelope"></i></a>
+    </div>
+</footer>
+
+<a href="https://wa.me/905321005054" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+// Sayfa geçişleri
+const sectionButtons = document.querySelectorAll('[data-section]');
+const sections = document.querySelectorAll('section');
+
+sectionButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-section');
+        if (document.getElementById(target)) {
+            sections.forEach(s => {
+                s.classList.remove('active');
+                s.style.opacity = 0;
+            });
+            const activeSection = document.getElementById(target);
+            activeSection.classList.add('active');
+            setTimeout(()=>{ activeSection.style.opacity = 1; }, 50);
+            window.location.hash = target;
+        }
+    });
+});
+
+// Hash ile açılış
+window.addEventListener('load', () => {
+    const hash = window.location.hash.replace('#','');
+    if(hash && document.getElementById(hash)){
+        sections.forEach(s => { s.classList.remove('active'); s.style.opacity = 0; });
+        const activeSection = document.getElementById(hash);
+        activeSection.classList.add('active');
+        setTimeout(()=>{ activeSection.style.opacity = 1; }, 50);
+    } else {
+        // Varsayılan: anasayfa açık kalsın
+        document.getElementById('anasayfa').classList.add('active');
+        document.getElementById('anasayfa').style.opacity = 1;
+    }
+});
+
+// SSS akordeon
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        const isVisible = answer.style.display === 'block';
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.display='none');
+        answer.style.display = isVisible ? 'none' : 'block';
+    });
+});
+</script>
+
+</body>
+</html>
+```
