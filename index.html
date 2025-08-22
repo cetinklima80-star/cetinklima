@@ -4,10 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Çetin Klima - Osmaniye’de klima satış, montaj ve teknik servis hizmetleri.">
-<title>Çetin Klima</title>
+<meta name="keywords" content="klima, klima montaj, klima servisi, Osmaniye klima, Kadirli klima, Çetin Klima"> 
+<meta name="author" content="Çetin Klima">
+
+<title>Çetin Klima | Klima Satış, Montaj ve Servis - Kadirli</title>
+
+<!-- Google Fonts (preconnect ile daha hızlı yüklenir) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Open Graph (Facebook & WhatsApp için) -->
+<meta property="og:title" content="Çetin Klima | Kadirli">
+<meta property="og:description" content="Klima Satışı • Montaj • Bakım • Servis - Osmaniye / Kadirli">
+<meta property="og:image" content="logo.png">
+<meta property="og:url" content="https://cetinklima.com">
+<meta property="og:type" content="business.business">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Çetin Klima | Kadirli">
+<meta name="twitter:description" content="Klima Satışı • Montaj • Bakım • Servis">
+<meta name="twitter:image" content="logo.png">
+
 <style>
+    /* buradan CSS başlıyor */
+
     /* Genel Stil */
     body { 
         font-family: 'Roboto', sans-serif; 
@@ -107,12 +132,14 @@
 
     /* Hero Bölümü */
     .hero {
-        background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('klima-bg.jpg') center/cover no-repeat;
+        background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('senin-fotografin.jpg') center/cover no-repeat;
         color:white;
         text-align:center;
         padding:100px 20px;
         border-radius:10px;
-    }
+        }
+
+    
     .hero h1 { font-size:36px; margin-bottom:15px; }
     .hero p { font-size:18px; margin-bottom:25px; }
 
@@ -201,63 +228,134 @@
         nav { display:block; text-align:center; } 
         nav a { display:inline-block; margin:5px; } 
     }
+    /* SLIDER */
+.slider {
+    position: relative;
+    max-width: 1000px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.slides {
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+}
+.slides img {
+    width: 100%;
+    border-radius: 12px;
+}
+/* Ok tuşları */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.prev { left: 15px; }
+.next { right: 15px; }
+.prev:hover, .next:hover { background: rgba(0,0,0,0.8); }
+
+/* Noktacıklar */
+.dots {
+    text-align: center;
+    margin-top: 15px;
+}
+.dot {
+    height: 14px;
+    width: 14px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.active-dot { background-color: #0077cc; }
+
 </style>
 </head>
 <body>
 
 <header>
-    <div style="display:flex; align-items:center;">
-        <img src="logo.png" alt="Çetin Klima Logo">
-        <span style="font-size:20px; font-weight:bold;">ÇETİN KLİMA KADİRLİ</span>
-    </div>
-    <nav>
-        <a data-section="anasayfa">Ana Sayfa</a>
-        <a data-section="hizmetlerimiz">Hizmetlerimiz</a>
-        <a data-section="markalarimiz">Markalarımız</a>
-        <a data-section="konumumuz">Konumumuz</a>
-    </nav>
+  <div style="display:flex; align-items:center;">
+      <a href="#anasayfa" style="display:flex; align-items:center; text-decoration:none; color:white;">
+          <img src="logo.png" alt="Çetin Klima Logo" height="50">
+          <span style="font-size:20px; font-weight:bold; margin-left:10px;">ÇETİN KLİMA KADİRLİ</span>
+      </a>
+  </div>
+  <nav>
+      <a href="#anasayfa" data-section="anasayfa">Ana Sayfa</a>
+      <a href="#hizmetlerimiz" data-section="hizmetlerimiz">Hizmetlerimiz</a>
+      <a href="#markalarimiz" data-section="markalarimiz">Markalarımız</a>
+      <a href="#konumumuz" data-section="konumumuz">Konumumuz</a>
+  </nav>
 </header>
+
 
 <!-- Hero -->
 <section id="anasayfa" class="active">
-    <div class="hero">
-        <h1>Çetin Klima – Kadirli’nin Güvencesi</h1>
-        <p>Klima Satışı • Montaj • Bakım • Servis</p>
-        <a data-section="hizmetlerimiz" class="button">Hizmetlerimizi Gör</a>
-        <a href="https://wa.me/905321005054" target="_blank" class="button" style="background:#25D366;">Hemen İletişime Geç</a>
+  <div class="hero">
+      <h1>Çetin Klima – Kadirli’nin Güvencesi</h1>
+      <p>Klima Satışı • Montaj • Bakım • Servis</p>
+      <a href="#hizmetlerimiz" data-section="hizmetlerimiz" class="button">Hizmetlerimizi Gör</a>
+      <a href="https://wa.me/905321005054" target="_blank" rel="noopener noreferrer" class="button" style="background:#25D366;">
+          Hemen İletişime Geç
+      </a>
+  </div>
+
+  <!-- SLIDER -->
+  <div class="slider">
+      <div class="slides">
+          <img src="slider1.jpg" alt="Midea klima modeli - Çetin Klima" loading="lazy">
+          <img src="slider2.jpg" alt="York klima montajı - Çetin Klima" loading="lazy">
+          <img src="slider3.jpg" alt="Hitachi klima servisi - Çetin Klima" loading="lazy">
+      </div>
+      <button class="prev" aria-label="Önceki slayt">&#10094;</button>
+      <button class="next" aria-label="Sonraki slayt">&#10095;</button>
+  </div>
+  <div class="dots" aria-label="Slayt navigasyonu"></div>
+
+
+
+<!-- Blog Önizleme -->
+<h2>Blog / Tavsiyeler</h2>
+<div class="cards">
+    <div class="blog-card">
+        <h3>Klima Seçerken Nelere Dikkat Etmelisiniz?</h3>
+        <p>Enerji sınıfı, BTU değeri, sessizlik ve garanti süresi seçimde en önemli kriterlerdir...</p>
+        <a href="#blog-klima-secimi" data-section="blog-klima-secimi" class="button">Devamını Oku</a>
+    </div>
+    <div class="blog-card">
+        <h3>Enerji Tasarrufu İpuçları</h3>
+        <p>Klima kullanımında faturaları azaltmak için doğru ayar ve bakım çok önemlidir...</p>
+        <a href="#blog-enerji-tasarrufu" data-section="blog-enerji-tasarrufu" class="button">Devamını Oku</a>
+    </div>
+    <div class="blog-card">
+        <h3>Klima Bakımı Neden Önemlidir?</h3>
+        <p>Düzenli bakım klimanın ömrünü uzatır, performansını artırır ve enerji tasarrufu sağlar...</p>
+        <a href="#blog-klima-bakimi" data-section="blog-klima-bakimi" class="button">Devamını Oku</a>
+    </div>
+    <div class="blog-card">
+        <h3>Yazın Klima Kullanımı ve İpuçları</h3>
+        <p>Yaz aylarında doğru kullanım ve bakım, konforlu bir ortam sağlar ve faturaları düşürür...</p>
+        <a href="#blog-yazin-kullanim" data-section="blog-yazin-kullanim" class="button">Devamını Oku</a>
     </div>
 
-    <!-- Blog Önizleme -->
-    <h2>Blog / Tavsiyeler</h2>
-    <div class="cards">
-        <div class="blog-card">
-            <h3>Klima Seçerken Nelere Dikkat Etmelisiniz?</h3>
-            <p>Enerji sınıfı, BTU değeri, sessizlik ve garanti süresi seçimde en önemli kriterlerdir...</p>
-            <a href="#" class="button">Devamını Oku</a>
-        </div>
-        <div class="blog-card">
-            <h3>Enerji Tasarrufu İpuçları</h3>
-            <p>Klima kullanımında faturaları azaltmak için doğru ayar ve bakım çok önemlidir...</p>
-            <a href="#" class="button">Devamını Oku</a>
-        </div>
-        <div class="blog-card">
-            <h3>Klima Bakımı Neden Önemlidir?</h3>
-            <p>Düzenli bakım klimanın ömrünü uzatır, performansını artırır ve enerji tasarrufu sağlar...</p>
-            <a href="#" class="button">Devamını Oku</a>
-        </div>
-        <div class="blog-card">
-            <h3>Yazın Klima Kullanımı ve İpuçları</h3>
-            <p>Yaz aylarında doğru kullanım ve bakım, konforlu bir ortam sağlar ve faturaları düşürür...</p>
-            <a href="#" class="button">Devamını Oku</a>
-        </div>
-
-        <!-- YENİ: Klima Filtreleri blog kartı -->
-        <div class="blog-card">
-            <h3>Klima Filtreleri Nasıl Yıkanır?</h3>
-            <p>Adım adım filtre temizliği, gereken malzemeler ve püf noktaları…</p>
-            <a class="button" data-section="blog-filtre-temizligi">Devamını Oku</a>
-        </div>
+    <!-- YENİ: Klima Filtreleri blog kartı -->
+    <div class="blog-card">
+        <h3>Klima Filtreleri Nasıl Yıkanır?</h3>
+        <p>Adım adım filtre temizliği, gereken malzemeler ve püf noktaları…</p>
+        <a href="#blog-filtre-temizligi" data-section="blog-filtre-temizligi" class="button">Devamını Oku</a>
     </div>
+</div>
+
 
     <!-- SSS -->
     <h2>Sıkça Sorulan Sorular</h2>
@@ -314,6 +412,96 @@
 </section>
 
 <!-- YENİ: "Klima Filtreleri Nasıl Yıkanır?" tam yazı -->
+<section id="blog-klima-secimi">
+  <div class="blog-post">
+    <h2>Klima Seçerken Nelere Dikkat Etmelisiniz?</h2>
+    <p class="muted">Okuma süresi: 4–5 dakika</p>
+    <p>Klima seçimi yaparken sadece fiyatına değil, uzun vadede size sağlayacağı <strong>konfor</strong> ve <strong>enerji verimliliğine</strong> de dikkat etmelisiniz.</p>
+
+    <h3>Başlıca Kriterler</h3>
+    <ul>
+      <li><strong>BTU Kapasitesi:</strong> Odanızın metrekaresine uygun olmalı.</li>
+      <li><strong>Enerji Sınıfı:</strong> A++ ve üzeri cihazlar uzun vadede tasarruf sağlar.</li>
+      <li><strong>Ses Seviyesi:</strong> Yatak odaları için sessiz modeller tercih edin.</li>
+      <li><strong>Garanti ve Servis:</strong> En az 3 yıl garanti ve yaygın servis ağı önemli.</li>
+    </ul>
+
+    <div class="note">
+      <strong>İpucu:</strong> 20–25 m² bir oda için genelde <strong>12.000 BTU</strong> cihaz uygundur.
+    </div>
+
+    <div style="text-align:center; margin-top:22px;">
+      <a class="button" data-section="anasayfa">← Ana Sayfaya Dön</a>
+    </div>
+  </div>
+</section>
+<section id="blog-enerji-tasarrufu">
+  <div class="blog-post">
+    <h2>Enerji Tasarrufu İpuçları</h2>
+    <p class="muted">Okuma süresi: 3–4 dakika</p>
+    <p>Klima kullanımında faturaları düşürmek ve cihazın ömrünü uzatmak için şu basit kurallara dikkat edin:</p>
+
+    <h3>Uygulanabilir İpuçları</h3>
+    <ul>
+      <li>Klima çalışırken kapı ve pencereleri kapalı tutun.</li>
+      <li>Perdeleri/Storları kapatarak güneş ışığını engelleyin.</li>
+      <li>Sıcaklık ayarını <strong>24–26°C</strong> aralığında tutun.</li>
+      <li>Düzenli filtre temizliği yapın.</li>
+    </ul>
+
+    <div class="note">
+      <strong>Bilgi:</strong> Sıcaklığı 1°C daha düşük ayarlamak, elektrik tüketimini %5–10 artırabilir.
+    </div>
+
+    <div style="text-align:center; margin-top:22px;">
+      <a class="button" data-section="anasayfa">← Ana Sayfaya Dön</a>
+    </div>
+  </div>
+</section>
+<section id="blog-klima-bakimi">
+  <div class="blog-post">
+    <h2>Klima Bakımı Neden Önemlidir?</h2>
+    <p class="muted">Okuma süresi: 4–6 dakika</p>
+    <p>Düzenli bakım yapılmayan klimalar hem performans kaybına uğrar hem de sağlığa zarar verebilir. İşte nedenleri:</p>
+
+    <h3>Bakımın Faydaları</h3>
+    <ul>
+      <li>Daha temiz hava → Alerji riskini azaltır.</li>
+      <li>Daha düşük elektrik faturası → Verimli çalışma.</li>
+      <li>Daha uzun cihaz ömrü → Arıza riskini azaltır.</li>
+    </ul>
+
+    <p>Yılda en az <strong>1 kez profesyonel bakım</strong> önerilir.</p>
+
+    <div style="text-align:center; margin-top:22px;">
+      <a class="button" data-section="anasayfa">← Ana Sayfaya Dön</a>
+    </div>
+  </div>
+</section>
+<section id="blog-yazin-kullanim">
+  <div class="blog-post">
+    <h2>Yazın Klima Kullanımı ve İpuçları</h2>
+    <p class="muted">Okuma süresi: 3–5 dakika</p>
+    <p>Yaz aylarında klimanızı daha konforlu ve ekonomik şekilde kullanmak için aşağıdaki ipuçlarına dikkat edin:</p>
+
+    <h3>Öneriler</h3>
+    <ul>
+      <li>Sıcaklık → 24–25°C ideal konfor sağlar.</li>
+      <li>Fan modu → Oda havasını dengeler.</li>
+      <li>Gece modu → Sessiz ve tasarrufludur.</li>
+      <li>Dış üniteyi gölgede tutun → Performansı artırır.</li>
+    </ul>
+
+    <div class="note">
+      <strong>İpucu:</strong> Klimayı çok düşük sıcaklıkta çalıştırmak yerine fan hızını artırmak daha ekonomiktir.
+    </div>
+
+    <div style="text-align:center; margin-top:22px;">
+      <a class="button" data-section="anasayfa">← Ana Sayfaya Dön</a>
+    </div>
+  </div>
+</section>
+
 <section id="blog-filtre-temizligi">
     <div class="blog-post">
         <h2>Klima Filtreleri Nasıl Yıkanır?</h2>
@@ -395,6 +583,42 @@ sectionButtons.forEach(btn => {
         }
     });
 });
+
+// SLIDER
+let slideIndex = 0;
+const slides = document.querySelector('.slides');
+const images = document.querySelectorAll('.slides img');
+const totalSlides = images.length;
+const dotsContainer = document.querySelector('.dots');
+
+// Noktaları oluştur
+for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active-dot');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+}
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+    if (index >= totalSlides) slideIndex = 0;
+    if (index < 0) slideIndex = totalSlides - 1;
+    slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+    dots.forEach(dot => dot.classList.remove('active-dot'));
+    dots[slideIndex].classList.add('active-dot');
+}
+
+function nextSlide() { slideIndex++; showSlide(slideIndex); }
+function prevSlide() { slideIndex--; showSlide(slideIndex); }
+function goToSlide(n) { slideIndex = n; showSlide(slideIndex); }
+
+document.querySelector('.next').addEventListener('click', nextSlide);
+document.querySelector('.prev').addEventListener('click', prevSlide);
+
+// Otomatik geçiş
+setInterval(nextSlide, 5000); // 5 saniyede bir
+
 
 // Hash ile açılış
 window.addEventListener('load', () => {
