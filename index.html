@@ -6,6 +6,7 @@
 <meta name="description" content="Çetin Klima - Osmaniye’de klima satış, montaj ve teknik servis hizmetleri.">
 <meta name="keywords" content="klima, klima montaj, klima servisi, Osmaniye klima, Kadirli klima, Çetin Klima"> 
 <meta name="author" content="Çetin Klima">
+
 <title>Çetin Klima | Klima Satış, Montaj ve Servis - Kadirli</title>
 
 <!-- Google Fonts -->
@@ -16,8 +17,7 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- CSS Preload -->
-<link rel="preload" href="style.css" as="style">
+<!-- CSS -->
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -51,9 +51,18 @@
   <!-- SLIDER -->
   <div class="slider">
       <div class="slides">
-          <img src="slider1.webp" alt="Midea klima modeli - Çetin Klima" loading="lazy" width="1000" height="500">
-          <img src="slider2.webp" alt="York klima montajı - Çetin Klima" loading="lazy" width="1000" height="500">
-          <img src="slider3.webp" alt="Hitachi klima servisi - Çetin Klima" loading="lazy" width="1000" height="500">
+          <picture>
+            <source media="(max-width:600px)" srcset="slider1-small.webp">
+            <img src="slider1.webp" alt="Midea klima modeli - Çetin Klima" loading="lazy">
+          </picture>
+          <picture>
+            <source media="(max-width:600px)" srcset="slider2-small.webp">
+            <img src="slider2.webp" alt="York klima montajı - Çetin Klima" loading="lazy">
+          </picture>
+          <picture>
+            <source media="(max-width:600px)" srcset="slider3-small.webp">
+            <img src="slider3.webp" alt="Hitachi klima servisi - Çetin Klima" loading="lazy">
+          </picture>
       </div>
       <button class="prev" aria-label="Önceki slayt">&#10094;</button>
       <button class="next" aria-label="Sonraki slayt">&#10095;</button>
@@ -137,8 +146,7 @@
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/905321005054" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
-<!-- JS Preload -->
-<link rel="preload" href="script.js" as="script">
-<script src="script.js" defer></script>
+<!-- JS -->
+<script src="script.js"></script>
 </body>
 </html>
