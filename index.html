@@ -10,6 +10,12 @@
 <title>Çetin Klima | Klima Satış, Montaj ve Servis - Kadirli</title>
 <link rel="canonical" href="https://www.cetinklima.com/">
 
+<!-- Favicon & PWA -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#ffffff">
+
 <!-- Open Graph -->
 <meta property="og:title" content="Çetin Klima | Klima Satış, Montaj ve Servis - Kadirli">
 <meta property="og:description" content="Osmaniye ve Kadirli’de klima satış, montaj ve teknik servis hizmetleri. Çetin Klima güvencesiyle.">
@@ -41,7 +47,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha384-u+u6s8v0e5G+soXHnQbR+0M3rY4zU4Pj2yM8C+KkOyy6gC1+P3fK8j2P9cfq9YVY" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 
 <!-- CSS -->
 <link rel="stylesheet" href="style.css" media="all">
@@ -77,9 +83,30 @@
   <!-- SLIDER -->
   <div class="slider">
       <div class="slides">
-          <img src="slider1.webp" alt="Midea klima modeli - Çetin Klima" width="800" height="450" loading="lazy">
-          <img src="slider2.webp" alt="York klima montajı - Çetin Klima" width="800" height="450" loading="lazy">
-          <img src="slider3.webp" alt="Hitachi klima servisi - Çetin Klima" width="800" height="450" loading="lazy">
+          <img 
+            src="slider1-800.webp" 
+            srcset="slider1-480.webp 480w, slider1-768.webp 768w, slider1-1200.webp 1200w" 
+            sizes="(max-width: 768px) 100vw, 1200px"
+            alt="Midea klima modeli - Çetin Klima" 
+            width="800" 
+            height="450" 
+            loading="lazy">
+          <img 
+            src="slider2-800.webp" 
+            srcset="slider2-480.webp 480w, slider2-768.webp 768w, slider2-1200.webp 1200w" 
+            sizes="(max-width: 768px) 100vw, 1200px"
+            alt="York klima montajı - Çetin Klima" 
+            width="800" 
+            height="450" 
+            loading="lazy">
+          <img 
+            src="slider3-800.webp" 
+            srcset="slider3-480.webp 480w, slider3-768.webp 768w, slider3-1200.webp 1200w" 
+            sizes="(max-width: 768px) 100vw, 1200px"
+            alt="Hitachi klima servisi - Çetin Klima" 
+            width="800" 
+            height="450" 
+            loading="lazy">
       </div>
       <button class="prev" aria-label="Önceki slayt">&#10094;</button>
       <button class="next" aria-label="Sonraki slayt">&#10095;</button>
