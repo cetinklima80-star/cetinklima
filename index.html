@@ -17,8 +17,24 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
+<!-- Kritik CSS inline -->
+<style>
+body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#e0f0f8;color:#333;transition:background .5s}
+header{background:#222;color:#fff;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+header img{height:50px;margin-right:10px}
+nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:700;cursor:pointer;transition:.3s;padding:6px 12px;border-radius:5px}
+nav a:hover{background:#00bfff;color:#fff}
+.hero{background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url('senin-fotografin.webp') center/cover no-repeat;color:#fff;text-align:center;padding:100px 20px;border-radius:10px}
+.hero h1{font-size:36px;margin-bottom:15px}
+.hero p{font-size:18px;margin-bottom:25px}
+.button{background:#0077cc;color:#fff;padding:12px 25px;text-decoration:none;border-radius:30px;transition:.3s;display:inline-block;font-weight:700;box-shadow:0 4px 6px rgba(0,0,0,.2);cursor:pointer}
+.button:hover{background:#005fa3;transform:translateY(-3px);box-shadow:0 6px 10px rgba(0,0,0,.25)}
+@media(max-width:600px){.hero{padding:60px 15px}.hero h1{font-size:28px}.hero p{font-size:16px}nav{display:block;text-align:center}nav a{display:inline-block;margin:5px}}
+</style>
+
+<!-- Asenkron CSS -->
+<link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.css"></noscript>
 </head>
 <body>
 
@@ -37,7 +53,6 @@
   </nav>
 </header>
 
-<!-- Hero -->
 <section id="anasayfa" class="active">
   <div class="hero">
       <h1>Çetin Klima – Kadirli’nin Güvencesi</h1>
@@ -48,21 +63,11 @@
       </a>
   </div>
 
-  <!-- SLIDER -->
   <div class="slider">
       <div class="slides">
-          <picture>
-            <source media="(max-width:600px)" srcset="slider1-small.webp">
-            <img src="slider1.webp" alt="Midea klima modeli - Çetin Klima" loading="lazy">
-          </picture>
-          <picture>
-            <source media="(max-width:600px)" srcset="slider2-small.webp">
-            <img src="slider2.webp" alt="York klima montajı - Çetin Klima" loading="lazy">
-          </picture>
-          <picture>
-            <source media="(max-width:600px)" srcset="slider3-small.webp">
-            <img src="slider3.webp" alt="Hitachi klima servisi - Çetin Klima" loading="lazy">
-          </picture>
+          <img src="slider1.webp" alt="Midea klima modeli - Çetin Klima" loading="lazy">
+          <img src="slider2.webp" alt="York klima montajı - Çetin Klima" loading="lazy">
+          <img src="slider3.webp" alt="Hitachi klima servisi - Çetin Klima" loading="lazy">
       </div>
       <button class="prev" aria-label="Önceki slayt">&#10094;</button>
       <button class="next" aria-label="Sonraki slayt">&#10095;</button>
@@ -70,7 +75,6 @@
   <div class="dots" aria-label="Slayt navigasyonu"></div>
 </section>
 
-<!-- Blog Önizleme -->
 <h2>Blog / Tavsiyeler</h2>
 <div class="cards">
     <div class="blog-card">
@@ -82,21 +86,6 @@
         <h3>Enerji Tasarrufu İpuçları</h3>
         <p>Klima kullanımında faturaları azaltmak için doğru ayar ve bakım çok önemlidir...</p>
         <a href="blog/enerji-tasarrufu/" class="button">Devamını Oku</a>
-    </div>
-    <div class="blog-card">
-        <h3>Klima Bakımı Neden Önemlidir?</h3>
-        <p>Düzenli bakım klimanın ömrünü uzatır, performansını artırır ve enerji tasarrufu sağlar...</p>
-        <a href="blog/klima-bakimi/" class="button">Devamını Oku</a>
-    </div>
-    <div class="blog-card">
-        <h3>Yazın Klima Kullanımı ve İpuçları</h3>
-        <p>Yaz aylarında doğru kullanım ve bakım, konforlu bir ortam sağlar ve faturaları düşürür...</p>
-        <a href="blog/yazin-kullanim/" class="button">Devamını Oku</a>
-    </div>
-    <div class="blog-card">
-        <h3>Klima Filtreleri Nasıl Yıkanır?</h3>
-        <p>Adım adım filtre temizliği, gereken malzemeler ve püf noktaları…</p>
-        <a href="blog/filtre-temizligi/" class="button">Devamını Oku</a>
     </div>
 </div>
 
@@ -121,16 +110,6 @@
       Evet, yıllık bakım klimanın ömrünü uzatır ve enerji tüketimini azaltır.
     </div>
   </div>
-
-  <div class="faq-item">
-    <button class="faq-question">
-      Garanti süresinde servis ücrete tabi midir?
-      <i class="fas fa-chevron-down"></i>
-    </button>
-    <div class="faq-answer">
-      Hayır, garanti kapsamındaki arızalar ücretsiz onarılır.
-    </div>
-  </div>
 </div>
 
 <footer>
@@ -138,15 +117,11 @@
     <div class="social-icons">
         <a href="https://wa.me/905321005054" target="_blank"><i class="fab fa-whatsapp"></i></a>
         <a href="https://www.instagram.com/cetinklimaa/?__pwa=1" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/gokhan.cetin5054" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="mailto:info@cetinklima.com"><i class="fas fa-envelope"></i></a>
     </div>
 </footer>
 
-<!-- WhatsApp Floating Button -->
 <a href="https://wa.me/905321005054" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
-<!-- JS -->
 <script src="script.js"></script>
 </body>
 </html>
