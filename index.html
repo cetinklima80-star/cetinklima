@@ -3,11 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Çetin Klima - Osmaniye’de klima satış, montaj ve teknik servis hizmetleri.">
-<meta name="keywords" content="klima, klima montaj, klima servisi, Osmaniye klima, Kadirli klima, Çetin Klima"> 
+<meta name="description" content="Çetin Klima - Osmaniye ve Kadirli’de klima satış, montaj ve teknik servis hizmetleri.">
 <meta name="author" content="Çetin Klima">
 
 <title>Çetin Klima | Klima Satış, Montaj ve Servis - Kadirli</title>
+<link rel="canonical" href="https://www.cetinklima.com/">
+
+<!-- Favicon & PWA -->
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Çetin Klima | Klima Satış, Montaj ve Servis - Kadirli">
+<meta property="og:description" content="Osmaniye ve Kadirli’de klima satış, montaj ve teknik servis hizmetleri. Çetin Klima güvencesiyle.">
+<meta property="og:image" content="https://www.cetinklima.com/logo.png">
+<meta property="og:url" content="https://www.cetinklima.com/">
+<meta property="og:type" content="website">
+
+<!-- JSON-LD Local Business Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Çetin Klima",
+  "image": "https://www.cetinklima.com/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kadirli",
+    "addressRegion": "Osmaniye",
+    "addressCountry": "TR"
+  },
+  "telephone": "+905321005054",
+  "url": "https://www.cetinklima.com"
+}
+</script>
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,27 +46,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 
 <!-- CSS -->
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css" media="all">
 </head>
 <body>
 
 <header>
   <div style="display:flex; align-items:center;">
-      <a href="index.html" style="display:flex; align-items:center; text-decoration:none; color:white;">
-          <img src="logo.png" alt="Çetin Klima Logo" height="50">
+      <a href="/" style="display:flex; align-items:center; text-decoration:none; color:white;" aria-label="Çetin Klima Ana Sayfa">
+          <img src="logo.png" alt="Çetin Klima Logo" width="120" height="50" decoding="async" loading="lazy">
           <span style="font-size:20px; font-weight:bold; margin-left:10px;">ÇETİN KLİMA KADİRLİ</span>
       </a>
   </div>
-  <nav>
-      <a href="index.html">Ana Sayfa</a>
-      <a href="hizmetlerimiz/">Hizmetlerimiz</a>
-      <a href="markalarimiz/">Markalarımız</a>
-      <a href="konumumuz/">Konumumuz</a>
+  <nav aria-label="Ana menü">
+      <a href="/" aria-current="page">Ana Sayfa</a>
+      <a href="/hizmetlerimiz/">Hizmetlerimiz</a>
+      <a href="/markalarimiz/">Markalarımız</a>
+      <a href="/konumumuz/">Konumumuz</a>
   </nav>
 </header>
+
 
 <!-- Hero -->
 <section id="anasayfa" class="active">
@@ -48,97 +80,88 @@
       </a>
   </div>
 
-  <!-- SLIDER -->
-  <div class="slider">
-      <div class="slides">
-          <img src="slider1.jpg" alt="Midea klima modeli - Çetin Klima" loading="lazy">
-          <img src="slider2.jpg" alt="York klima montajı - Çetin Klima" loading="lazy">
-          <img src="slider3.jpg" alt="Hitachi klima servisi - Çetin Klima" loading="lazy">
-      </div>
-      <button class="prev" aria-label="Önceki slayt">&#10094;</button>
-      <button class="next" aria-label="Sonraki slayt">&#10095;</button>
-  </div>
-  <div class="dots" aria-label="Slayt navigasyonu"></div>
+<!-- SLIDER -->
+<div class="slider" aria-live="polite">
+    <div class="slides">
+        <img src="slider1.webp" alt="Midea klima modeli - Çetin Klima" width="800" height="450" decoding="async" loading="lazy">
+        <img src="slider2.webp" alt="York klima montajı - Çetin Klima" width="800" height="450" decoding="async" loading="lazy">
+        <img src="slider3.webp" alt="Hitachi klima servisi - Çetin Klima" width="800" height="450" decoding="async" loading="lazy">
+    </div>
+    <button class="prev" aria-label="Önceki slayt">&#10094;</button>
+    <button class="next" aria-label="Sonraki slayt">&#10095;</button>
+</div>
+<div class="dots" aria-label="Slayt navigasyonu"></div>
+
 </section>
 
 <!-- Blog Önizleme -->
 <h2>Blog / Tavsiyeler</h2>
 <div class="cards">
-    <div class="blog-card">
+    <article class="blog-card">
         <h3>Klima Seçerken Nelere Dikkat Etmelisiniz?</h3>
         <p>Enerji sınıfı, BTU değeri, sessizlik ve garanti süresi seçimde en önemli kriterlerdir...</p>
         <a href="blog/klima-secimi/" class="button">Devamını Oku</a>
-    </div>
-    <div class="blog-card">
+    </article>
+    <article class="blog-card">
         <h3>Enerji Tasarrufu İpuçları</h3>
         <p>Klima kullanımında faturaları azaltmak için doğru ayar ve bakım çok önemlidir...</p>
         <a href="blog/enerji-tasarrufu/" class="button">Devamını Oku</a>
-    </div>
-    <div class="blog-card">
+    </article>
+    <article class="blog-card">
         <h3>Klima Bakımı Neden Önemlidir?</h3>
         <p>Düzenli bakım klimanın ömrünü uzatır, performansını artırır ve enerji tasarrufu sağlar...</p>
         <a href="blog/klima-bakimi/" class="button">Devamını Oku</a>
-    </div>
-    <div class="blog-card">
+    </article>
+    <article class="blog-card">
         <h3>Yazın Klima Kullanımı ve İpuçları</h3>
         <p>Yaz aylarında doğru kullanım ve bakım, konforlu bir ortam sağlar ve faturaları düşürür...</p>
         <a href="blog/yazin-kullanim/" class="button">Devamını Oku</a>
-    </div>
-    <div class="blog-card">
+    </article>
+    <article class="blog-card">
         <h3>Klima Filtreleri Nasıl Yıkanır?</h3>
         <p>Adım adım filtre temizliği, gereken malzemeler ve püf noktaları…</p>
         <a href="blog/filtre-temizligi/" class="button">Devamını Oku</a>
-    </div>
+    </article>
 </div>
 
 <h2>Sıkça Sorulan Sorular</h2>
 <div class="faq">
   <div class="faq-item">
-    <button class="faq-question">
-      Klima alırken nelere dikkat etmeliyim?
-      <i class="fas fa-chevron-down"></i>
-    </button>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq1">Klima alırken nelere dikkat etmeliyim? <i class="fas fa-chevron-down"></i></button>
+    <div id="faq1" class="faq-answer" hidden>
       BTU kapasitesi, enerji verimliliği ve garanti süresi en önemli kriterlerdir.
     </div>
   </div>
 
   <div class="faq-item">
-    <button class="faq-question">
-      Yıllık bakım gerekli mi?
-      <i class="fas fa-chevron-down"></i>
-    </button>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq2">Yıllık bakım gerekli mi? <i class="fas fa-chevron-down"></i></button>
+    <div id="faq2" class="faq-answer" hidden>
       Evet, yıllık bakım klimanın ömrünü uzatır ve enerji tüketimini azaltır.
     </div>
   </div>
 
   <div class="faq-item">
-    <button class="faq-question">
-      Garanti süresinde servis ücrete tabi midir?
-      <i class="fas fa-chevron-down"></i>
-    </button>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq3">Garanti süresinde servis ücrete tabi midir? <i class="fas fa-chevron-down"></i></button>
+    <div id="faq3" class="faq-answer" hidden>
       Hayır, garanti kapsamındaki arızalar ücretsiz onarılır.
     </div>
   </div>
 </div>
 
-
 <footer>
     &copy; 2025 Çetin Klima. Tüm hakları saklıdır.
     <div class="social-icons">
-        <a href="https://wa.me/905321005054" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/cetinklimaa/?__pwa=1" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/gokhan.cetin5054" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="mailto:info@cetinklima.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/905321005054" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/cetinklimaa/?__pwa=1" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/gokhan.cetin5054" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:info@cetinklima.com" aria-label="E-posta"><i class="fas fa-envelope"></i></a>
     </div>
 </footer>
 
 <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/905321005054" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/905321005054" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp ile iletişim"><i class="fab fa-whatsapp"></i></a>
 
 <!-- JS -->
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
