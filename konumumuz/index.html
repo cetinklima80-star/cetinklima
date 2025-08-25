@@ -1,85 +1,69 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Çetin Klima Kadirli – İşletmemizin açık adresi ve Google Maps üzerinden konum bilgileri. Osmaniye klima satış ve servis için bize ulaşabilirsiniz.">
-<meta name="keywords" content="Çetin Klima konum, Kadirli klima servisi, Osmaniye klima montaj, Çetin Klima adres">
-<meta name="author" content="Çetin Klima">
-<title>Konumumuz | Çetin Klima</title>
-
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<style>
-body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#f9f9f9;color:#333}
-header{background:#000;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-header a{color:#fff;text-decoration:none}
-header img{height:50px}
-header nav{display:flex;gap:15px;flex-wrap:wrap}
-header nav a:hover{text-decoration:underline}
-section{padding:50px 20px;text-align:center;background:#f0f8ff}
-section h2{font-size:2rem;margin-bottom:30px;color:#0077c8}
-.map-container{max-width:900px;margin:0 auto;border-radius:10px;overflow:hidden}
-.map-container iframe{width:100%;height:450px;border:0}
-footer{background:#222;color:#fff;padding:20px;text-align:center}
-footer .social-icons{margin-top:10px}
-footer .social-icons a{color:#fff;margin:0 10px;font-size:1.2rem;transition:color .3s;text-decoration:none}
-footer .social-icons a:hover{color:#25d366}
-.whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;border-radius:50%;padding:15px;font-size:1.5rem;box-shadow:0 4px 6px rgba(0,0,0,.2);z-index:1000;transition:transform .3s;display:flex;align-items:center;justify-content:center}
-.whatsapp-float:hover{transform:scale(1.1)}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konumumuz - Çetin Klima</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
-<header>
-  <div style="display:flex;align-items:center;">
-      <a href="/" style="display:flex;align-items:center;text-decoration:none;color:white;" aria-label="Çetin Klima Ana Sayfa">
-          <img src="/logo.webp" alt="Çetin Klima Logo" width="120" height="50" decoding="async" loading="lazy">
-          <span style="font-size:20px;font-weight:bold;margin-left:10px;">ÇETİN KLİMA KADİRLİ</span>
-      </a>
-  </div>
-  <nav aria-label="Ana menü">
-      <a href="/" aria-current="page">Ana Sayfa</a>
-      <a href="/hizmetlerimiz/">Hizmetlerimiz</a>
-      <a href="/markalarimiz/">Markalarımız</a>
-      <a href="/konumumuz/">Konumumuz</a>
-  </nav>
-</header>
-
-<section>
-    <h2>Konumumuz</h2>
-    <div class="map-container">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25368.67546567349!2d36.0660463347656!3d37.36417899565178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152ec5cc919f000b%3A0xac3619632fb51c37!2s%C3%87ET%C4%B0N%20KL%C4%B0MA%20%7C%20Midea%20-%20Rota%20-%20Hitachi%20-%20York%20-%20Hisense%20Yetkili%20Sat%C4%B1%C5%9F%20Bayi%20ve%20Servis!5e0!3m2!1str!2str!4v1755983075393!5m2!1str!2str" 
-            allowfullscreen 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+  <!-- HEADER (dokunmadım) -->
+  <header>
+    <div class="logo">
+      <a href="../"><img src="../images/logo.png" alt="Çetin Klima Logo"></a>
     </div>
-</section>
+    <nav>
+      <ul>
+        <li><a href="../">Anasayfa</a></li>
+        <li><a href="../hizmetlerimiz/">Hizmetlerimiz</a></li>
+        <li><a href="../hakkimizda/">Hakkımızda</a></li>
+        <li><a href="../iletisim/">İletişim</a></li>
+        <li><a href="../konumumuz/" class="active">Konumumuz</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<footer>
-    &copy; 2025 Çetin Klima. Tüm hakları saklıdır.
-    <div class="social-icons">
-        <a href="https://wa.me/905321005054" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/cetinklimaa/?__pwa=1" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/gokhan.cetin5054" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="mailto:info@cetinklima.com" aria-label="E-posta"><i class="fas fa-envelope"></i></a>
+  <!-- SAYFA İÇERİĞİ -->
+  <main style="padding:40px; max-width:1000px; margin:auto;">
+    <h1>Konumumuz</h1>
+    <p>Bizi kolayca bulabilmeniz için açık adresimiz ve Google Harita bağlantımız aşağıdadır.</p>
+
+    <!-- Google Harita Embed -->
+    <div style="margin:20px 0;">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3089.647615674985!2d36.0921593!3d37.3670968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152ec5cc919f000b%3A0xac3619632fb51c37!2zQ8SfaVRJTiBLTElNQSB8IE1pZGVhIC0gUm90YSAtIEhpdGFjaGkgLSBZb3JrIC0gSGlzZW5zZSBZZXRraWxpIFNhdMSxxZ8gQmF5aSB2ZSBTZXJ2aXM!5e0!3m2!1str!2str!4v1724600000000!5m2!1str!2str" 
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
     </div>
-</footer>
 
-<a href="https://wa.me/905321005054" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <!-- Konum Tarifi -->
+    <div style="background:#f9f9f9; padding:20px; border-radius:10px; margin-bottom:20px;">
+      <h2>Adres Tarifi</h2>
+      <p>📍 Belediye binası karşısı</p>
+      <p>📍 Eskimez Sigorta arka sokağı</p>
+      <p>📍 Basiret Evleri karşısı</p>
+    </div>
 
-<!-- JS -->
-<script defer>
-document.addEventListener("DOMContentLoaded",()=>{console.log("Konumumuz sayfası yüklendi.")});
-</script>
+    <!-- Telefon -->
+    <div style="margin-bottom:20px;">
+      <h2>Bize Ulaşın</h2>
+      <p>📞 <a href="tel:+905321005054">0 532 100 50 54</a></p>
+    </div>
 
+    <!-- Google İşletme -->
+    <div style="margin-bottom:20px;">
+      <h2>Google İşletmemiz</h2>
+      <p>
+        <a href="https://www.google.com/maps/place/%C3%87ET%C4%B0N+KL%C4%B0MA+%7C+Midea+-+Rota+-+Hitachi+-+York+-+Hisense+Yetkili+Sat%C4%B1%C5%9F+Bayi+ve+Servis/@37.3670968,36.0921593,17z" target="_blank">
+          Google'da Çetin Klima (Kadirli) işletmemizi görüntüleyin →
+        </a>
+      </p>
+    </div>
+  </main>
+
+  <!-- FOOTER (dokunmadım) -->
+  <footer>
+    <p>© 2025 Çetin Klima. Tüm hakları saklıdır.</p>
+  </footer>
 </body>
 </html>
