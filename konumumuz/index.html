@@ -11,52 +11,28 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&display=swap" rel="stylesheet">
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<!-- Mevcut CSS -->
-<link rel="stylesheet" href="../style.css">
-
 <style>
-/* Konum sayfasına özel eklemeler */
-.address-info {
-    background: #f0f8ff;
-    border-left: 4px solid #0077cc;
-    padding: 15px 20px;
-    margin: 20px auto;
-    max-width: 900px;
-    border-radius: 10px;
-    font-weight: 700;
-    color: #222;
-}
-
-.address-info p {
-    margin: 8px 0;
-    font-size: 16px;
-}
-
-.contact-info {
-    background: #fff;
-    padding: 15px 20px;
-    max-width: 900px;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    text-align: center;
-    font-weight: 700;
-}
-
-.contact-info a {
-    color: #0077cc;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
+body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#f9f9f9;color:#333}
+header{background:#000;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+header a{color:#fff;text-decoration:none}
+header img{height:50px}
+header nav{display:flex;gap:15px;flex-wrap:wrap}
+header nav a:hover{text-decoration:underline}
+section{padding:50px 20px;text-align:center;background:#f0f8ff}
+section h2{font-size:2rem;margin-bottom:30px;color:#0077c8}
+.map-container{max-width:900px;margin:0 auto;border-radius:10px;overflow:hidden}
+.map-container iframe{width:100%;height:450px;border:0}
+footer{background:#222;color:#fff;padding:20px;text-align:center}
+footer .social-icons{margin-top:10px}
+footer .social-icons a{color:#fff;margin:0 10px;font-size:1.2rem;transition:color .3s;text-decoration:none}
+footer .social-icons a:hover{color:#25d366}
+.whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;border-radius:50%;padding:15px;font-size:1.5rem;box-shadow:0 4px 6px rgba(0,0,0,.2);z-index:1000;transition:transform .3s;display:flex;align-items:center;justify-content:center}
+.whatsapp-float:hover{transform:scale(1.1)}
 </style>
 </head>
 <body>
@@ -85,19 +61,6 @@
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
         </iframe>
-    </div>
-
-    <div class="address-info">
-        <h3>Adres Tarifi</h3>
-        <p>📍 Belediye binası karşısı</p>
-        <p>📍 Eskimez Sigorta arka sokağı</p>
-        <p>📍 Basiret Evleri karşısı</p>
-    </div>
-
-    <div class="contact-info">
-        <h3>Bize Ulaşın</h3>
-        <p>📞 <a href="tel:+905321005054">0 532 100 50 54</a></p>
-        <p>🌐 <a href="https://www.google.com/maps/place/%C3%87ET%C4%B0N+KL%C4%B0MA+%7C+Midea+-+Rota+-+Hitachi+-+York+-+Hisense+Yetkili+Sat%C4%B1%C5%9F+Bayi+ve+Servis/@37.3670968,36.0921593,17z" target="_blank">Google İşletmemizi Görüntüleyin</a></p>
     </div>
 </section>
 
