@@ -1,125 +1,45 @@
-/* anasayfa.css */
-
 /* HERO */
-.hero {
-  background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
-              url('senin-fotografin.webp') center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 100px 20px;
-  border-radius: 10px;
+.hero{
+  background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)), url('senin-fotografin.webp') center/cover no-repeat;
+  color:#fff; text-align:center; padding:100px 20px; border-radius:10px;
 }
-.hero h1 {
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-.hero p {
-  font-size: 18px;
-  margin-bottom: 25px;
-}
+.hero h1{ font-size:36px; margin-bottom:15px; }
+.hero p{ font-size:18px; margin-bottom:25px; }
 
-/* SLIDER */
-.slider {
-  position: relative;
-  max-width: 1000px;
-  margin: 20px auto;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+/* BLOG KARTLARI (anasayfadaki önizleme) */
+.blog-card{
+  background:#fff; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,.1);
+  padding:20px; margin:10px; flex:1 1 300px; transition:.3s;
 }
-.slides {
-  display: flex;
-  transition: transform .7s ease-in-out;
-}
-.slides img {
-  width: 100%;
-  border-radius: 12px;
-  aspect-ratio: 16/9;
-}
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 32px;
-  background: rgba(0,0,0,.5);
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 50%;
-}
-.prev { left: 15px; }
-.next { right: 15px; }
-.prev:hover, .next:hover { background: rgba(0,0,0,.8); }
-.dots {
-  text-align: center;
-  margin-top: 15px;
-}
-.dot {
-  height: 14px;
-  width: 14px;
-  margin: 0 5px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-  transition: background-color .3s;
-}
-.dot:focus { outline: 2px solid #0077cc; }
-.active-dot { background-color: #0077cc; }
+.blog-card:hover{ transform:translateY(-5px); box-shadow:0 8px 12px rgba(0,0,0,.15); background:#f0f8ff; }
 
-/* BLOG ÖNİZLEME */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+/* BLOG POST (istersen blog sayfasında da kullanabilirsin, yoksa silebilirsin) */
+.blog-post{
+  background:#fff; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,.08);
+  padding:25px; max-width:900px; margin:auto;
 }
-.blog-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,.1);
-  padding: 20px;
-  margin: 10px;
-  flex: 1 1 300px;
-  transition: .3s;
-}
-.blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0,0,0,.15);
-  background: #f0f8ff;
-}
+.blog-post h3{ color:#0b6fbf; margin-top:20px; }
+.blog-post ul{ padding-left:18px; }
+.muted{ color:#444; font-size:14px; }
+.note{ background:#f0f8ff; border-left:4px solid #0077cc; padding:10px 12px; border-radius:8px; }
 
-/* FAQ */
-.faq {
-  max-width: 700px;
-  margin: 20px auto;
+/* SLIDER (sadece anasayfa) */
+.slider{
+  position:relative; max-width:1000px; margin:20px auto; overflow:hidden;
+  border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.2);
 }
-.faq-item {
-  border-bottom: 1px solid #ddd;
+.slides{ display:flex; transition:transform .7s ease-in-out; }
+.slides img{ width:100%; border-radius:12px; aspect-ratio:16/9; }
+.prev,.next{
+  position:absolute; top:50%; transform:translateY(-50%); font-size:32px;
+  background:rgba(0,0,0,.5); color:#fff; border:none; padding:8px 12px; cursor:pointer; border-radius:50%;
 }
-.faq-question {
-  width: 100%;
-  background: #f8f8f8;
-  border: none;
-  outline: none;
-  padding: 15px;
-  text-align: left;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.prev{ left:15px; } .next{ right:15px; }
+.prev:hover,.next:hover{ background:rgba(0,0,0,.8); }
+.dots{ text-align:center; margin-top:15px; }
+.dot{
+  height:14px; width:14px; margin:0 5px; background-color:#bbb; border-radius:50%;
+  display:inline-block; cursor:pointer; transition:background-color .3s;
 }
-.faq-question:hover {
-  background: #eee;
-}
-.faq-answer {
-  display: none;
-  padding: 0 15px 15px;
-  font-size: 15px;
-  color: #444;
-}
-.faq-item.active .faq-answer { display: block; }
-.faq-item.active .faq-question i { transform: rotate(180deg); }
+.dot:focus{ outline:2px solid #0077cc; }
+.active-dot{ background-color:#0077cc; }
