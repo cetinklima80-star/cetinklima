@@ -1,0 +1,59 @@
+
+/* BLOG SAYFALARI */
+
+/* Blog başlığı */
+.blog-post h2 {
+  color: #0b6fbf;
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Okuma süresi metni */
+.blog-post .muted {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Liste stilleri */
+.blog-post ul,
+.blog-post ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.blog-post li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Bilgi / ipucu kutusu */
+.blog-post .note {
+  background: #eaf6ff;
+  border-left: 4px solid #0077cc;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Ana sayfaya dön butonu */
+.blog-post .button {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* Mobil uyum */
+@media (max-width: 768px) {
+  .blog-post {
+    padding: 20px;
+  }
+  .blog-post h2 {
+    font-size: 24px;
+  }
+}
