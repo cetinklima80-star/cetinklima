@@ -1,29 +1,40 @@
-/* hizmetlerimiz.css */
+/* HİZMETLERİMİZ SAYFASI */
 
-/* HİZMETLER KARTLARI */
+/* Başlık */
+h2 {
+  color: #0b6fbf;
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hizmet kartları */
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
+  gap: 25px;
 }
 
-.card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,.1);
-  flex: 1 1 200px;
-  max-width: 250px;
-  text-align: center;
-  font-weight: bold;
+.cards .card {
+  background: linear-gradient(145deg, #ffffff, #f0f8ff);
+  border: 1px solid #dce9f5;
   font-size: 18px;
-  transition: .3s;
+  font-weight: 600;
+  padding: 30px;
+  transition: transform .3s, box-shadow .3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  background: #f0f8ff;
-  box-shadow: 0 8px 12px rgba(0,0,0,.15);
+.cards .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+  background: #eaf6ff;
+}
+
+/* Mobil uyum */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+  }
+  .cards .card {
+    width: 100%;
+  }
 }
