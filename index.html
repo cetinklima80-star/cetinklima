@@ -56,19 +56,33 @@
 <body>
 
 <header>
-  <div style="display:flex; align-items:center;">
-      <a href="/" style="display:flex; align-items:center; text-decoration:none; color:white;" aria-label="Çetin Klima Ana Sayfa">
-          <img src="logo.png" alt="Çetin Klima Logo" width="120" height="50" decoding="async" loading="lazy">
-          <span style="font-size:20px; font-weight:bold; margin-left:10px;">ÇETİN KLİMA KADİRLİ</span>
-      </a>
+  <div class="logo">
+    <a href="/" aria-label="Çetin Klima Ana Sayfa">
+      <img src="logo.png" alt="Çetin Klima Logo" width="120" height="50">
+      <span>ÇETİN KLİMA KADİRLİ</span>
+    </a>
   </div>
-  <nav aria-label="Ana menü">
-      <a href="/" aria-current="page">Ana Sayfa</a>
-      <a href="/hizmetlerimiz/">Hizmetlerimiz</a>
-      <a href="/markalarimiz/">Markalarımız</a>
-      <a href="/konumumuz/">Konumumuz</a>
+
+  <!-- Masaüstü menü -->
+  <nav class="desktop-menu">
+    <a href="/" aria-current="page">Ana Sayfa</a>
+    <a href="/hizmetlerimiz/">Hizmetlerimiz</a>
+    <a href="/markalarimiz/">Markalarımız</a>
+    <a href="/konumumuz/">Konumumuz</a>
+  </nav>
+
+  <!-- Mobil menü butonu -->
+  <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">☰</button>
+
+  <!-- Mobil menü -->
+  <nav class="mobile-menu">
+    <a href="/" aria-current="page">Ana Sayfa</a>
+    <a href="/hizmetlerimiz/">Hizmetlerimiz</a>
+    <a href="/markalarimiz/">Markalarımız</a>
+    <a href="/konumumuz/">Konumumuz</a>
   </nav>
 </header>
+
 
 
 <!-- Hero -->
