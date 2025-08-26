@@ -77,3 +77,9 @@ document.querySelectorAll('.faq-item').forEach(item => {
     item.classList.toggle('active', !expanded);
   });
 });
+
+<script>
+document.querySelector(".menu-toggle").addEventListener("click", function() {
+  document.querySelector(".mobile-menu").classList.toggle("show");
+});
+</script>
