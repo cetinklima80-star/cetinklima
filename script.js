@@ -83,3 +83,13 @@ document.querySelector(".menu-toggle").addEventListener("click", function() {
   document.querySelector(".mobile-menu").classList.toggle("show");
 });
 </script>
+// --- Mobil Menü ---
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("show");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+  });
+}
