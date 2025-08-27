@@ -92,3 +92,21 @@ footer{
 .faq-answer{ display:none; padding:0 15px 15px; font-size:15px; color:#444; }
 .faq-item.active .faq-answer{ display:block; }
 .faq-item.active .faq-question i{ transform:rotate(180deg); }
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff; /* header içindeki beyaz metin */
+  font-weight: 700;
+  font-size: 18px;
+}
+.logo img {
+  margin-right: 10px;
+}
+.logo span {
+  white-space: nowrap; /* satır kaymasını önler */
+}
