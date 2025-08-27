@@ -78,11 +78,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
   });
 });
 
-<script>
-document.querySelector(".menu-toggle").addEventListener("click", function() {
-  document.querySelector(".mobile-menu").classList.toggle("show");
-});
-</script>
+
 // --- Mobil Menü ---
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
