@@ -110,3 +110,32 @@ footer{
 .logo span {
   white-space: nowrap; /* satır kaymasını önler */
 }
+/* Mobil menü animasyonu */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  background:#333;
+  position:absolute; 
+  top:70px; 
+  right:20px;
+  padding:0; 
+  border-radius:8px;
+  max-height:0; 
+  overflow:hidden;
+  opacity:0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.mobile-menu a {
+  margin:0;
+  padding:12px;
+  display:block;
+  color:#fff;
+  text-decoration:none;
+}
+
+.mobile-menu.show {
+  padding:10px; 
+  max-height:500px; /* yeterli yüksekliği veriyoruz */
+  opacity:1;
+}
