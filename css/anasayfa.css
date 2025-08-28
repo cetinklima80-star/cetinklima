@@ -110,3 +110,27 @@
 @media (min-width: 769px) {
   .slides img { height: 350px; }
 }
+/* NEDEN BİZ */
+.cards .card i {
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* CALL TO ACTION */
+.cta-section {
+  text-align: center;
+  background: #f0f8ff;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: 40px auto;
+  max-width: 900px;
+}
+.cta-section h2 {
+  margin-bottom: 15px;
+}
+/* SLIDER genişlik ayarı */
+.slider {
+  max-width: 900px;
+  margin: 30px auto;
+}
+
