@@ -26,6 +26,15 @@ if (sliderEl) {
 
     const dots = dotsContainer.querySelectorAll('.dot');
 
+    // 🔹 Yüksekliği ayarlayan fonksiyon
+    function adjustSliderHeight() {
+      const currentImg = images[slideIndex];
+      if (currentImg && sliderEl) {
+        sliderEl.style.height = currentImg.clientHeight + 'px';
+      }
+    }
+
+    // 🔹 Slayt değiştirme fonksiyonu (yükseklik dahil)
     function showSlide(n) {
       if (n >= totalSlides) slideIndex = 0;
       else if (n < 0) slideIndex = totalSlides - 1;
@@ -34,6 +43,8 @@ if (sliderEl) {
       slides.style.transform = `translateX(${-slideIndex * 100}%)`;
       dots.forEach(d => d.classList.remove('active-dot'));
       dots[slideIndex].classList.add('active-dot');
+
+      adjustSliderHeight(); // her değişimde yüksekliği güncelle
     }
 
     function nextSlide() { slideIndex++; showSlide(slideIndex); }
@@ -51,8 +62,12 @@ if (sliderEl) {
       prevBtn.addEventListener('click', prevSlide);
     }
 
-    // Otomatik geçiş
+    // 🔹 Otomatik geçiş
     setInterval(nextSlide, 5000);
+
+    // 🔹 Sayfa yüklendiğinde ve pencere boyutu değişince yükseklik ayarla
+    window.addEventListener('load', adjustSliderHeight);
+    window.addEventListener('resize', adjustSliderHeight);
   }
 }
 
@@ -78,7 +93,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   });
 });
 
-
 // --- Mobil Menü ---
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
@@ -89,28 +103,3 @@ if (menuToggle && mobileMenu) {
     menuToggle.setAttribute("aria-expanded", isOpen);
   });
 }
-
-
-function adjustSliderHeight() {
-  const currentImg = images[slideIndex];
-  if (currentImg && sliderEl) {
-    sliderEl.style.height = currentImg.clientHeight + 'px';
-  }
-}
-
-// Her slayt değiştiğinde yüksekliği ayarla
-function showSlide(n) {
-  if (n >= totalSlides) slideIndex = 0;
-  else if (n < 0) slideIndex = totalSlides - 1;
-  else slideIndex = n;
-
-  slides.style.transform = `translateX(${-slideIndex * 100}%)`;
-  dots.forEach(d => d.classList.remove('active-dot'));
-  dots[slideIndex].classList.add('active-dot');
-  
-  adjustSliderHeight();  // 🔹 Ekledik
-}
-
-// Sayfa yüklendiğinde ilk yükseklik
-window.addEventListener('load', adjustSliderHeight);
-window.addEventListener('resize', adjustSliderHeight);
