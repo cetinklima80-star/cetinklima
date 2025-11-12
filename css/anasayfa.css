@@ -1,146 +1,159 @@
+/* anasayfa.css - iyileştirilmiş */
+
+/* Temel değişkenler (common.css ile uyumlu) */
+:root {
+  --brand: #0077cc;
+  --brand-dark: #005fa3;
+  --accent: #25D366;
+  --card-bg: #fff;
+  --muted: #666;
+}
 
 /* HERO */
 .hero{
-  background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('senin-fotografin.webp') center/cover no-repeat;
+  background: linear-gradient(180deg, rgba(0,0,0,0.36), rgba(0,0,0,0.36)), url('../senin-fotografin.webp') center/cover no-repeat;
   color: #fff;
   text-align: center;
-  padding: 100px 20px;
+  padding: 80px 20px;
   border-radius: 10px;
+  margin-top: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.24);
 }
-.hero h1{ font-size: 36px; margin-bottom: 15px; }
-.hero p{ font-size: 18px; margin-bottom: 25px; }
+.hero-inner{ max-width: 1100px; margin: 0 auto; }
+.hero h1{ font-size: clamp(26px, 4vw, 44px); margin-bottom: 12px; letter-spacing: .6px; }
+.hero p{ font-size: clamp(15px, 2vw, 18px); margin-bottom: 18px; color: #f2f8ff; }
+.hero-ctas { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:6px; }
+.whatsapp-btn{ background: var(--accent); border-radius:30px; }
 
-/* BLOG KARTLARI */
-.blog-card{
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,.1);
-  padding: 20px;
-  margin: 10px;
-  flex: 1 1 300px;
-  transition: .3s;
-}
-.blog-card:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0,0,0,.15);
-  background: #f0f8ff;
+/* Slider wrapper to center and constrain */
+.slider-wrapper {
+  max-width: 1100px;
+  margin: 26px auto;
+  position: relative;
 }
 
-/* BLOG POST */
-.blog-post{
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.08);
-  padding: 25px;
-  max-width: 900px;
-  margin: auto;
-}
-.blog-post h3{ color: #0b6fbf; margin-top: 20px; }
-.blog-post ul{ padding-left: 18px; }
-.muted{ color: #444; font-size: 14px; }
-.note{ background: #f0f8ff; border-left: 4px solid #0077cc; padding: 10px 12px; border-radius: 8px; }
-
-/* SLIDER */
+/* Slider base */
 .slider {
   position: relative;
-  max-width: 100%;      /* ekranı taşmasın */
-  margin: 20px auto;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  background: #111;
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
 }
 
+/* slides: horizontal strip */
 .slides {
   display: flex;
-  transition: transform .7s ease-in-out;
+  width: 100%;
+  transition: transform .7s cubic-bezier(.22,.9,.2,1);
+  will-change: transform;
 }
 
-.slides img {
-  width: 100%;
-  height: auto;          /* resim yüksekliği otomatik */
-  object-fit: contain;   /* taşma olmasın */
-  border-radius: 12px;
+/* each slide */
+.slide{
+  min-width: 100%;
+  position: relative;
   display: block;
+  user-select: none;
 }
-/* Responsive ayarlar */
-@media (max-width: 480px) {
-  .slides img { height: auto; }
+.slide img {
+  width: 100%;
+  height: auto;
+  display:block;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
 }
-@media (min-width: 481px) and (max-width: 768px) {
-  .slides img { height: auto; }
+
+/* caption inside slide */
+.slide-caption {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  background: linear-gradient(90deg, rgba(7, 70, 130, 0.9), rgba(0,0,0,0.0));
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  max-width: 70%;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
 }
-@media (min-width: 769px) {
-  .slides img { height: auto; }
-}
-/* Slider navigation buttons */
-.prev, .next {
+.slide-caption strong{ display:block; font-size:18px; margin-bottom:4px; }
+.slide-caption span{ font-size:14px; opacity:.95; }
+
+/* controls (prev/next) */
+.slider-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 28px;
-  background: rgba(0,0,0,.5);
-  color: #fff;
   border: none;
-  padding: 8px 12px;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  padding: 12px;
+  border-radius: 999px;
+  display: flex;
+  align-items:center;
+  justify-content:center;
   cursor: pointer;
-  border-radius: 50%;
+  transition: background .18s, transform .12s;
 }
-.prev { left: 15px; }
-.next { right: 15px; }
-.prev:hover, .next:hover { background: rgba(0,0,0,.8); }
+.slider-btn svg{ display:block; }
+.slider-btn:hover { background: rgba(255,255,255,0.12); transform: translateY(-50%) scale(1.03); }
+.prev{ left: 12px; }
+.next{ right: 12px; }
 
-/* Slider dots */
+/* dots */
 .dots {
-  text-align: center;
-  margin-top: 10px;
+  text-align:center;
+  margin-top:10px;
 }
 .dot {
-  height: 12px;
-  width: 12px;
-  margin: 0 4px;
+  height: 10px;
+  width: 10px;
+  margin: 0 6px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
-  transition: background-color .3s;
+  transition: transform .18s, background-color .18s;
+  vertical-align: middle;
 }
-.active-dot { background-color: #0077cc; }
+.dot:hover { transform: scale(1.12); }
+.dot.active-dot { background-color: var(--brand); transform: scale(1.18); }
 
-/* 📱 Telefon */
-@media (max-width: 480px) {
-  .slides img { height: 200px; }
-}
+/* progress bar (subtle) */
+.slider-progress { position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.04); }
+.slider-progress-bar { height: 100%; width: 0%; transition: width linear; background: linear-gradient(90deg,var(--brand),var(--brand-dark)); }
 
-/* 📲 Tablet */
-@media (min-width: 481px) and (max-width: 768px) {
-  .slides img { height: 280px; }
-}
+/* Cards grid (neden, blog) */
+.cards { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin:12px 0; }
+.why-cards .card { flex: 1 1 260px; max-width: 340px; padding:22px; text-align:center; }
+.blog-grid .blog-card { flex: 1 1 260px; max-width: 320px; }
 
-/* 💻 Masaüstü */
-@media (min-width: 769px) {
-  .slides img { height: 350px; }
+/* blog-card overrides */
+.blog-card{
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  padding: 18px;
+  margin: 8px;
+  transition: transform .22s, box-shadow .22s;
 }
-/* NEDEN BİZ */
-.cards .card i {
-  margin-bottom: 10px;
-  display: block;
-}
+.blog-card:hover{ transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,.08); }
 
-/* CALL TO ACTION */
+/* CTA */
 .cta-section {
   text-align: center;
-  background: #f0f8ff;
-  padding: 40px 20px;
-  border-radius: 10px;
-  margin: 40px auto;
-  max-width: 900px;
-}
-.cta-section h2 {
-  margin-bottom: 15px;
-}
-/* SLIDER genişlik ayarı */
-.slider {
-  max-width: 900px;
-  margin: 30px auto;
+  background: linear-gradient(180deg,#f8fcff,#f0f8ff);
+  padding: 36px 20px;
+  border-radius: 12px;
+  margin: 36px auto;
+  max-width: 1000px;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .slide-caption { display:none; }
+  .hero { padding: 48px 14px; }
+  .slider-btn { padding: 10px; }
+  .why-cards .card { max-width: none; }
+}
