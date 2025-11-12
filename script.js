@@ -89,3 +89,28 @@ if (menuToggle && mobileMenu) {
     menuToggle.setAttribute("aria-expanded", isOpen);
   });
 }
+
+
+function adjustSliderHeight() {
+  const currentImg = images[slideIndex];
+  if (currentImg && sliderEl) {
+    sliderEl.style.height = currentImg.clientHeight + 'px';
+  }
+}
+
+// Her slayt değiştiğinde yüksekliği ayarla
+function showSlide(n) {
+  if (n >= totalSlides) slideIndex = 0;
+  else if (n < 0) slideIndex = totalSlides - 1;
+  else slideIndex = n;
+
+  slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+  dots.forEach(d => d.classList.remove('active-dot'));
+  dots[slideIndex].classList.add('active-dot');
+  
+  adjustSliderHeight();  // 🔹 Ekledik
+}
+
+// Sayfa yüklendiğinde ilk yükseklik
+window.addEventListener('load', adjustSliderHeight);
+window.addEventListener('resize', adjustSliderHeight);
