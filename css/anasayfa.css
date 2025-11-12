@@ -71,7 +71,7 @@
 }
 @media (min-width: 769px) {
   .slides img { height: auto; }
-
+}
 /* Slider navigation buttons */
 .prev, .next {
   position: absolute;
