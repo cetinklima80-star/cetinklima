@@ -62,6 +62,15 @@
   border-radius: 12px;
   display: block;
 }
+/* Responsive ayarlar */
+@media (max-width: 480px) {
+  .slides img { height: auto; }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .slides img { height: auto; }
+}
+@media (min-width: 769px) {
+  .slides img { height: auto; }
 
 /* Slider navigation buttons */
 .prev, .next {
