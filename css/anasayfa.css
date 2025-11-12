@@ -57,9 +57,10 @@
 
 .slides img {
   width: 100%;
-  height: 350px;        /* default masaüstü */
-  object-fit: cover;    /* oranı koru */
+  height: auto;          /* resim yüksekliği otomatik */
+  object-fit: contain;   /* taşma olmasın */
   border-radius: 12px;
+  display: block;
 }
 
 /* Slider navigation buttons */
