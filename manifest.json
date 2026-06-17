@@ -3,7 +3,7 @@
   "name": "Çetin Klima Kadirli Servis Takip",
   "icons": [
     {
-      "src": "/favicon.png",
+      "src": "/apple-touch-icon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
