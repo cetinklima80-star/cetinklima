@@ -207,5 +207,15 @@
 
 <!-- JS -->
 <script src="script.js" defer></script>
+<!-- PWA SERVICE WORKER REGISTRATION -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('Çetin Klima PWA: Sistem aktif hale getirildi.', reg))
+        .catch(err => console.log('PWA Hatası: Sistem başlatılamadı.', err));
+    });
+  }
+</script>
 </body>
 </html>
