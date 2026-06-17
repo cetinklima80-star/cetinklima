@@ -1,42 +1,196 @@
-/* konumumuz.css — sadece Konumumuz sayfasına özel stiller */
+/* ================================================================
+   KONUMUMUZ.CSS — Çetin Klima
+   ================================================================ */
 
-/* Sayfa bölümü (yalnızca bu sayfa) */
-.konumumuz-section{
-  padding:60px 18px;
-  background:#f0f8ff;
-  border-radius:8px;
+.page-hero {
+  background: linear-gradient(160deg, #081525 0%, #0F2A4A 60%, #0c3050 100%);
+  padding: 60px 0 56px;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.ph-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-b);
+  font-size: 13px;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.ph-breadcrumb a { color: rgba(255,255,255,.5); transition: var(--t); }
+.ph-breadcrumb a:hover { color: var(--cyan); }
+.ph-breadcrumb i { font-size: 10px; }
+.ph-title {
+  font-family: var(--font-h);
+  font-size: clamp(28px, 5vw, 46px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+.ph-title em {
+  font-style: normal;
+  background: linear-gradient(90deg, #a5f3fc, #06B6D4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ph-sub {
+  font-family: var(--font-b);
+  font-size: 17px;
+  color: rgba(255,255,255,.6);
+  position: relative;
+  z-index: 1;
 }
 
-/* Başlık (sayfaya özel sınıf) */
-.konumumuz-title{
-  color:#0077c8;
-  font-size:28px;
-  margin-bottom:28px;
-  text-align:center;
+/* ── Konum Bölümü ── */
+.konum-section { padding: 72px 0; background: #fff; }
+
+.konum-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 52px;
+  align-items: start;
 }
 
-/* Harita kapsayıcısı responsive (16:9) */
-.map-container{
-  position:relative;
-  width:100%;
-  max-width:900px;
-  margin:0 auto;
-  padding-bottom:56.25%; /* 16:9 */
-  height:0;
-  border-radius:10px;
-  overflow:hidden;
-  box-shadow:0 6px 18px rgba(0,0,0,.12);
-  background:#e9f6ff;
-}
-.map-container iframe{
-  position:absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  border:0;
+.konum-title {
+  font-family: var(--font-h);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 24px;
+  letter-spacing: -.3px;
 }
 
-/* Küçük ekranlarda biraz iç boşluk */
-@media (max-width:480px){
-  .konumumuz-section{ padding:36px 12px; }
-  .konumumuz-title{ font-size:22px; margin-bottom:18px; }
+/* ── Contact Cards ── */
+.contact-cards { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--r);
+  text-decoration: none;
+  transition: var(--t);
+  color: inherit;
+}
+a.contact-card:hover {
+  background: rgba(6,182,212,.05);
+  border-color: rgba(6,182,212,.25);
+  transform: translateX(4px);
+}
+.contact-card.no-link { cursor: default; }
+
+.cc-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-sm);
+  background: var(--grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cc-icon i { font-size: 16px; color: #fff; }
+.cc-icon.cc-wa { background: #25d366; }
+
+.cc-content { flex: 1; }
+.cc-label {
+  font-family: var(--font-h);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--slate-400);
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.cc-val {
+  font-family: var(--font-b);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--dark);
+}
+.cc-arrow { color: var(--slate-400); font-size: 11px; flex-shrink: 0; }
+
+/* ── Hizmet Bölgeleri ── */
+.hizmet-bolgeleri h3 {
+  font-family: var(--font-h);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+.bolge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.bolge-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-b);
+  font-size: 13px;
+  color: var(--slate-700);
+  background: rgba(6,182,212,.07);
+  border: 1px solid rgba(6,182,212,.18);
+  padding: 6px 12px;
+  border-radius: var(--r-full);
+}
+.bolge-chip i { color: var(--cyan); font-size: 11px; }
+.bolge-note {
+  font-family: var(--font-b);
+  font-size: 13px;
+  color: var(--slate-400);
+  line-height: 1.5;
+}
+
+/* ── Harita ── */
+.konum-map-wrap { display: flex; flex-direction: column; gap: 16px; }
+
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 60%;
+  height: 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--sh-lg);
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+}
+.map-container iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+
+.map-cta { align-self: flex-start; }
+
+@media (max-width: 900px) {
+  .konum-inner { grid-template-columns: 1fr; gap: 36px; }
+  .konum-map-wrap { order: -1; }
+}
+@media (max-width: 480px) {
+  .konum-section { padding: 48px 0; }
+  .map-container { padding-bottom: 70%; }
 }

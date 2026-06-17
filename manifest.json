@@ -1,6 +1,6 @@
 {
-  "short_name": "ÇetinKlima",
-  "name": "Çetin Klima Kadirli Servis Takip",
+  "short_name": "Çetin Klima",
+  "name": "Çetin Klima Osmaniye | Klima Satış, Montaj ve Servis",
   "icons": [
     {
       "src": "/apple-touch-icon.png",
@@ -14,9 +14,11 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "/index.html",
-  "background_color": "#ffffff",
+  "start_url": "/",
+  "scope": "/",
+  "background_color": "#eef6fd",
   "display": "standalone",
-  "theme_color": "#ffffff",
-  "orientation": "portrait"
+  "theme_color": "#0F2A4A",
+  "orientation": "portrait",
+  "lang": "tr"
 }
